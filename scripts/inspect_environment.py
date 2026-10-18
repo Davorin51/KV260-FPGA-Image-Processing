@@ -1,4 +1,5 @@
 """Capture actual discoverable tools; missing tools remain null, never guessed."""
+
 import argparse
 import json
 import platform
@@ -23,10 +24,16 @@ def inspect() -> dict:
             except (OSError, subprocess.SubprocessError) as exc:
                 entry["error"] = str(exc)
         tools[name] = entry
-    return {"captured_at_utc": datetime.now(UTC).isoformat(), "platform": platform.platform(),
-            "python": sys.version, "tools": tools,
-            "hardware_connected": "not_probed", "selected_part": None,
-            "clock_constraint_ns": None, "hardware_measurements": None}
+    return {
+        "captured_at_utc": datetime.now(UTC).isoformat(),
+        "platform": platform.platform(),
+        "python": sys.version,
+        "tools": tools,
+        "hardware_connected": "not_probed",
+        "selected_part": None,
+        "clock_constraint_ns": None,
+        "hardware_measurements": None,
+    }
 
 
 def main() -> None:
