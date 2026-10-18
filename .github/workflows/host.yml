@@ -1,0 +1,31 @@
+name: Host verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+      - run: pip install -r requirements-dev.lock && pip install --no-deps -e .
+      - run: make lint
+      - run: make test
+      - run: make sanitize
+      - run: python -m build
+      - run: make demo
+      - uses: actions/upload-artifact@v4
+        with:
+          name: grayscale-cpu-demo-python-${{ matrix.python }}
+          path: build/demo/
+  # AMD tools are licensed, external prerequisites. No job claims to synthesize IP here.
