@@ -1,0 +1,33 @@
+{
+  "mode": "software_crosscheck",
+  "algorithm": "grayscale_fixed_point_v1",
+  "generated_at_utc": "2026-10-18T13:08:59.923548+00:00",
+  "rows": 64,
+  "cols": 128,
+  "seed": 51,
+  "comparison": {
+    "pixels": 8192,
+    "different_pixels": 0,
+    "max_absolute_error": 0,
+    "mse": 0.0,
+    "psnr_db": null,
+    "psnr_infinite": true,
+    "exact_match": true
+  },
+  "cpp_binary_sha256": "2b2bee4d5e1b53c49c4bfc490d6f63b2d2c3b05b9491cb035467aad976e4278c",
+  "cpp_stdout": "CPU model processed 8192 pixels; no FPGA execution",
+  "hls_csim": "not_run",
+  "rtl_cosim": "not_run",
+  "hardware": "not_run",
+  "hardware_fps": null,
+  "synthesis_metrics": null,
+  "files": {
+    "cpu.gray32": "2170eb2d73415b4d4c53b5db902128c3f94aee80e9f04bbbb6f15ade14ea86cc",
+    "cpu.png": "4a00dcf291213a7bb0867949f1f71756b1e334aa5ef331828d16b088c89d4789",
+    "difference.png": "43d3cbabf4a171c359abbf22b6d1bd89d911fb1876bcdaf30069fc1aa94fd41c",
+    "input.png": "9c30745ad202812b4fe02fc12943075cae5e4ac1405aa51756c014cbcc6eeb2c",
+    "input.rgbx": "0e9f90bddd9a03d96f4ea672fc6bf7bf5e27acaaac3f1d6a1155d3c5a8218e82",
+    "reference.gray32": "2170eb2d73415b4d4c53b5db902128c3f94aee80e9f04bbbb6f15ade14ea86cc",
+    "reference.png": "4a00dcf291213a7bb0867949f1f71756b1e334aa5ef331828d16b088c89d4789"
+  }
+}

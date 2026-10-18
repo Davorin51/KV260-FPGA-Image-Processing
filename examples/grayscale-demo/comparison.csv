@@ -1,0 +1,8 @@
+metric,value
+pixels,8192
+different_pixels,0
+max_absolute_error,0
+mse,0.0
+psnr_db,
+psnr_infinite,True
+exact_match,True

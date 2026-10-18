@@ -1,6 +1,6 @@
 # Development milestones
 
-## M1 - Grayscale and a reproducible verification foundation (in progress)
+## M1 - Grayscale and a reproducible verification foundation (host verification complete; AMD validation pending)
 
 - Original fixed-point grayscale core and independent Python reference.
 - Portable C++ frame model and binary CPU utility.
